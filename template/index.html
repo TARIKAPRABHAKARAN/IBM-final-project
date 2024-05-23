@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agriculture Advisory</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #8fe6ec;
+    color: white;
+    padding: 1em 0;
+    text-align: center;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+main {
+    padding: 20px;
+}
+
+section {
+    margin-bottom: 20px;
+}
+
+h2 {
+    color: #4CAF50;
+}
+
+#cropList, #weatherInfo, #adviceResponse {
+    background-color: white;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.crop {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.crop img {
+    width: 50px;
+    height: 50px; 
+    margin-right: 10px;
+    border-radius: 5px;
+}
+
+.weather-icon {
+    width: 50px;
+    height: 50px;
+    vertical-align: middle;
+}
+
+footer {
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Agriculture Advisory</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#crops">Crops</a></li>
+                <li><a href="#weather">Weather</a></li>
+                <li><a href="#advice">Advice</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="home">
+            <img src="../static/images/rice.jpg" alt="images">
+            <img src="../static/images/corn.jpeg" alt="imgges">
+            <img src="../static/images/fresh-wheat-crop.jpg" alt="images">
+            <h2>Welcome to Agriculture Advisory</h2>
+            <p>Your one-stop solution for all agricultural needs.</p>
+        </section>
+        <section id="crops">
+            <h2>Crop Information</h2>
+            <div id="cropList"></div>
+        </section>
+        <section id="weather">
+            <h2>Weather Information</h2>
+            <div id="weatherInfo"></div>
+        </section>
+        <section id="advice">
+            <h2>Expert Advice</h2>
+            <form id="adviceForm">
+                <label for="query">Ask for advice:</label>
+                <input type="text" id="query" name="query" required>
+                <button type="submit">Submit</button>
+            </form>
+            <div id="adviceResponse"></div>
+        </section>
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <p>Email: support@agricultureadvisory.com</p>
+            <p>Phone: +123-456-7890</p>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Agriculture Advisory. All rights reserved.</p>
+    </footer>
+    <script src="index.js"></script>
+    <script>
+  window.watsonAssistantChatOptions = {
+    integrationID: "f0728f5b-7b52-4d25-bd01-fbce2471e399", // The ID of this integration.
+    region: "au-syd", // The region your integration is hosted in.
+    serviceInstanceID: "235fcb5a-fd79-403f-bd92-d969a7b13d9f", // The ID of your service instance.
+    onLoad: async (instance) => { await instance.render(); }
+  };
+  setTimeout(function(){
+    const t=document.createElement('script');
+    t.src="https://web-chat.global.assistant.watson.appdomain.cloud/versions/" + (window.watsonAssistantChatOptions.clientVersion || 'latest') + "/WatsonAssistantChatEntry.js";
+    document.head.appendChild(t);
+  });
+</script>
+</body>
+</html>
